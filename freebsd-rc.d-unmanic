@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+# PROVIDE: unmanic
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name=unmanic
+rcvar=unmanic_enable
+
+command="python3.6 /home/unmanic/src/unmanic/service.py"
+
+load_rc_config $name
+
+LC_ALL=en_US.UTF-8
+export LC_ALL
+
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+# SET THEM IN THE /etc/rc.conf FILE
+#
+unmanic_enable=${unmanic_enable-"NO"}
+pidfile=${unmanic_pidfile-"/var/run/utility.pid"}
+
+run_rc_command "$1"
