@@ -1413,7 +1413,7 @@ if (App.isAngularJsApp() === false) {
 // Update the Worker Pie Charts
 var updateWorkerPieCharts = function() {
     // Get ajax call to fetch update on status for all workers
-    $.get('/?ajax=workersInfo', function (data) {
+    $.get('/dashboard/?ajax=workersInfo', function (data) {
         // Create list of ids that should exist
         var element_list = [];
         // Set the class of all .number divs. (active or idle)
@@ -1465,7 +1465,7 @@ var updateWorkerPieCharts = function() {
 // Update the Pending Tasks list
 var updatePendingTasksList = function() {
     // Get ajax call to fetch update on status for all workers
-    $.get('/?ajax=pendingTasks&format=html', function (data) {
+    $.get('/dashboard/?ajax=pendingTasks&format=html', function (data) {
         // update the list
         $('#pending_tasks').html(data)
     });
@@ -1475,7 +1475,7 @@ var updatePendingTasksList = function() {
 // Update the Historical Tasks list
 var updateHistoricalTasksList = function() {
     // Get ajax call to fetch update on status for all workers
-    $.get('/?ajax=historicalTasks&format=html', function (data) {
+    $.get('/dashboard/?ajax=historicalTasks&format=html', function (data) {
         // update the list
         $('#completed_tasks').html(data)
     });
